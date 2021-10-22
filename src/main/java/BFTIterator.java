@@ -10,14 +10,14 @@ public class BFTIterator extends Iterator{
         this.heap = heap;
     }
     
-    @Override 
-    int next() {
+    @Override
+    public int next() {
         cur_index++;
         return heap.get(cur_index - 1);
     }
 
     @Override
-    boolean hasNext() {
+    public boolean hasNext() {
         return cur_index < heap.size();
     }
 }

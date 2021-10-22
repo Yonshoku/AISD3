@@ -13,16 +13,19 @@ public class DFTIterator extends Iterator{
     }
 
     @Override
-    int next() {
+    public int next() {
         if (path.size() == 0) {
             path.add(false);
             cur_index = 0;
+
         } else if (!path.get(path.size() - 1) && (cur_index * 2 + 1) < heap.size()) { // Go to the left son
             cur_index = cur_index * 2 + 1;
             path.add(false);
+
         } else if (path.get(path.size() - 1) && (cur_index * 2 + 2) < heap.size()) { // Go to the right son
             cur_index = cur_index * 2 + 2;
             path.add(false);
+
         } else { // No son left, go up until parent with son
             path.remove(path.size() - 1);
             cur_index = (cur_index - 1) / 2;
@@ -42,7 +45,7 @@ public class DFTIterator extends Iterator{
     }
 
     @Override
-    boolean hasNext() {
+    public boolean hasNext() {
         return passed < heap.size();
     }
 }

@@ -34,28 +34,32 @@ public class BinaryHeap {
         }
     }
 
-    void insert(int key) {
+    public void insert(int key) {
         heap.add(key);
         siftUp(heap.size() - 1);
     }
 
-    boolean contains(int key) {
+    public boolean contains(int key) {
         return heap.contains(key);
     }
 
-    void remove(int key) {
+    public void remove(int key) {
         int index = heap.indexOf(key);
         swap(heap, index, heap.size() - 1);
         heap.remove(heap.size() - 1);
         siftDown(index);
     }
 
-    Iterator createBFTIterator() {
+    public Iterator createBFTIterator() {
         return new BFTIterator(heap);
     }
 
-    Iterator createDFTIterator() {
+    public Iterator createDFTIterator() {
         return new DFTIterator(heap);
+    }
+
+    public int get(int index) {
+        return heap.get(index);
     }
 
     @Override
