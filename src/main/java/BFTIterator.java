@@ -3,10 +3,10 @@ package main.java;
 import java.util.ArrayList;
 
 public class BFTIterator extends Iterator{
-    ArrayList<Integer> heap;
+    Arr heap;
     int cur_index;
     
-    public BFTIterator(ArrayList<Integer> heap) {
+    public BFTIterator(Arr heap) {
         this.heap = heap;
     }
     

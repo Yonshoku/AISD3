@@ -1,11 +1,9 @@
 package main.java;
 
-import java.util.ArrayList;
-
 public class BinaryHeap {
-    ArrayList<Integer> heap = new ArrayList<Integer>();
+     Arr heap = new Arr();
 
-    void swap(ArrayList<Integer> heap, int index1, int index2) {
+    void swap(Arr heap, int index1, int index2) {
         int temp = heap.get(index1);
         heap.set(index1, heap.get(index2));
         heap.set(index2, temp);
@@ -46,7 +44,7 @@ public class BinaryHeap {
     public void remove(int key) {
         int index = heap.indexOf(key);
         swap(heap, index, heap.size() - 1);
-        heap.remove(heap.size() - 1);
+        heap.pop_back();
         siftDown(index);
     }
 
@@ -73,4 +71,10 @@ public class BinaryHeap {
 
         return heapString;
     }
+}
+
+class Node {
+    int value;
+    Node next;
+    Node prev;
 }
